@@ -57,7 +57,4 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
     padding: 0;
     border: 0;
     vertical-align: initial;
-    @media (max-width: 1100px) {
-        font-size: 12px;
-    }
 }
