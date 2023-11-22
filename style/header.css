@@ -1,0 +1,146 @@
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 100px;
+    width: 100%;
+}
+
+header .inner {
+    width: 100%;
+    padding: 0 20px;
+    max-width: 1640px;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+header .logo {
+    display: flex;
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 60px;
+}
+
+header .logo img {
+    height: 60px;
+    width: auto;
+}
+
+header .headerNav {
+    margin-left: auto;
+    position: relative;
+    z-index: 100;
+    height: inherit;
+    text-align: center;
+}
+
+header .headerNav .headerNavList {
+    height: inherit;
+    display: flex;
+    flex-wrap: wrap;
+
+    > li{
+        height: inherit;
+        > a {
+            height: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 500;
+            position: relative;
+            padding: 0 40px;
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 3px;
+                background-color: red;                    
+                transition: .25s;
+            }
+            &:hover {
+                color: red;
+                font-weight: 600;
+                &::before{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+header .mobileMenu {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        height: 60px;
+        background-color: white;
+    }
+
+    header .logo {
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 40px;
+    }
+    
+    header .logo img {
+        height: 40px;
+        width: auto;
+    }
+
+    header .headerNav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        overflow: auto;
+        background-color: white;
+        display: none;
+    }
+
+    header .headerNav {
+        display: block;
+    }
+
+    header .headerNav .headerNavList {
+        display: block;
+        height: auto;
+        text-align: left;
+        padding-top: 20px;
+
+        > li {
+            height: inherit;
+
+            > a {
+                padding: 20px;
+            }
+        }
+        
+    }
+
+     header .mobileMenu {
+        display: block;
+        margin-left: auto;
+    }
+
+    header .mobileMenu button {
+        width: 20px;
+        height: 20px;
+        background-position: 0px 0px;
+        background-repeat: no-repeat;
+        background-image: url('../img/hamburger.png');
+        background-size: 20px 20px;
+        border: none;
+        margin: 0px;
+        padding: 0px;
+    } 
+}
