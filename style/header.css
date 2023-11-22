@@ -1,9 +1,12 @@
 header {
+    background-color: hsla(0, 0%, 100%, .25);
+    backdrop-filter: blur(10px);
     position: fixed;
     left: 0;
     right: 0;
     height: 100px;
     width: 100%;
+    z-index: 10000;
 }
 
 header .inner {
@@ -42,7 +45,7 @@ header .headerNav .headerNavList {
     display: flex;
     flex-wrap: wrap;
 
-    > li{
+    > li {
         height: inherit;
         > a {
             height: inherit;

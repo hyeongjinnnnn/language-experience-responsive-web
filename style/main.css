@@ -1,0 +1,61 @@
+
+/* 영상 영역 */
+.main-visual-section {
+    position: relative;
+    width: 100%;
+}
+
+.main-visual-section video {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 800px;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.main-visual-section .texts {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 10%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+
+    > h2 {
+        font-size: 100px;
+        color:white;
+        font-weight: 700;
+        margin-bottom: 10px;
+        line-height: 1;
+        opacity: 0.8;
+    }
+
+    > h4 {
+        font-size: 1.4rem;
+        color: white;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .main-visual-section video {
+        min-height: 100vh;
+        height: auto;
+    }
+
+    .main-visual-section .texts {
+        > h2 {
+            font-size: 60px;
+        }
+
+        > h4 {
+            font-size: 1.2rem;
+        } 
+    }
+
+}
