@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=0,minimal-ui">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bigshot+One&family=Noto+Sans+KR&display=swap" rel="stylesheet">
     <link href="style/common.css" rel="stylesheet">
     <link href="style/header.css" rel="stylesheet">
     <link href="style/main.css" rel="stylesheet">
     <script src="js/header.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <title>termProject</title>
 </head>
 <body style="margin: 0">
@@ -42,27 +45,30 @@
                     <h4>외국인과 대화할 수 있는 수준까지 최선을 다해보세요</h4>
                 </div>
             </section>
-            <section id="main-today-section" class="main-today-section" style="background-color: pink;">
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
+            <section id="main-today-section" class="main-today-section">
+                <div class="container">
+                    <h1 class="section-title">오늘의 단어</h1>
+                    <h3 class="section-subtitle">today</h3>
+                    <div id="word-container">
+                        <h1 id="word">Word of the Day</h1>
+                        <p id="meaning">Meaning: </p>
+                    </div>
+                    <script>
+                        $(document).ready(() => {
+                            // 서버에서 단어 가져오기
+                            $.get('/getWord', (data) => {
+                                // 가져온 단어와 뜻을 HTML에 적용
+                                $('#word').text(`Word of the Day: ${data.word}`);
+                                $('#meaning').text(`Meaning: ${data.meaning}`);
+                            });
+                        });
+                    </script>
+                </div>
             </section>
             <section id="main-language-section" class="main-language-section" style="background-color: yellow;">
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
+                <table id="resultTable">
+                    <!-- 테이블이 여기에 동적으로 생성될 것입니다. -->
+                </table>
             </section>
             <section id="main-translation-section" class="main-translation-section" style="background-color: red;">
                 <h1>adfsf</h1>

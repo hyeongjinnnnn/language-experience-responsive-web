@@ -1,5 +1,29 @@
+/* main common */ 
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+}
 
-/* 영상 영역 */
+.section-subtitle {
+    text-align: center;
+    font-size: 1.8rem;
+    color: red;
+    font-family: 'Bigshot One', serif;
+}
+
+@media screen and (max-width: 1000px) {
+    .section-title {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.4rem;
+        color: red;
+    }
+}
+
+/* 영상배경 영역 */
 .main-visual-section {
     position: relative;
     width: 100%;
@@ -57,5 +81,49 @@
             font-size: 1.2rem;
         } 
     }
+}
 
+/* 오늘의 단어 영역 */
+.main-today-section {
+    padding: 60px 0;
+}
+
+.main-today-section .title {
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .main-today-section .title {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+}
+
+/* 언어 이해 */
+table.inven {
+    border: 1px solid black;
+} 
+
+table.inven caption {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+table.inven tbody {
+    border: 3px;
+}
+
+table.inven td, table.inven th {
+    border: 1px solid black;
+}
+
+table.inven b, table.inven div {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+table.inven p {
+    font-size: 1.0rem;
 }
