@@ -1,98 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=0,minimal-ui">
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bigshot+One&family=Noto+Sans+KR&display=swap" rel="stylesheet">
-    <link href="style/common.css" rel="stylesheet">
-    <link href="style/header.css" rel="stylesheet">
-    <link href="style/main.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,shrink-to-fit=no,user-scalable=0,minimal-ui"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bigshot+One&family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style/common.css" rel="stylesheet" />
+    <link href="style/header.css" rel="stylesheet" />
+    <link href="style/main.css" rel="stylesheet" />
     <script src="js/header.js" defer></script>
     <script src="js/main.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("TD7hQdaBRHsmTdFMq");
+      })();
+    </script>
     <title>termProject</title>
-</head>
-<body style="margin: 0">
+  </head>
+  <body style="margin: 0">
     <div class="root">
-        <header>
-            <div class="inner">
-                <a class="logo" href="index.html">
-                    <img src="img/international.png">
-                    international
-                </a>
-                <div class="mobileMenu">
-                    <button type="button" class="mobileMenuBtn"></button>
+      <header>
+        <div class="inner">
+          <a class="logo" href="index.html">
+            <img src="img/international.png" />
+            international
+          </a>
+          <div class="mobileMenu">
+            <button type="button" class="mobileMenuBtn"></button>
+          </div>
+          <nav class="headerNav">
+            <ul class="headerNavList">
+              <li>
+                <a id="headerLink1" href="#main-word-section">랜덤단어</a>
+              </li>
+              <li>
+                <a id="headerLink2" href="#main-language-section">히라가나</a>
+              </li>
+              <li>
+                <a id="headerLink3" href="#main-translation-section">언어번역</a>
+              </li>
+              <li>
+                <a id="headerLink4" href="#main-feedback-section">피드백</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main class="main-contents">
+        <section id="main-visual-section" class="main-visual-section">
+          <video autoplay muted loop>
+            <source src="video/business.mp4" type="video/mp4" />
+          </video>
+          <div class="texts">
+            <h2>3개의 언어</h2>
+            <h4>영어, 일본어, 프랑스어</h4>
+            <h4>외국인과 대화할 수 있는 수준까지 최선을 다해보세요</h4>
+          </div>
+        </section>
+        <section id="main-word-section" class="main-word-section">
+          <div class="container">
+            <h1 class="section-title">랜덤 단어</h1>
+            <h3 class="section-subtitle">words</h3>
+            <div class="random-container">
+              <div id="word-container">
+                <div id="word-container">
+                  <strong>단어:</strong> <span id="english_word"></span><br />
+                  <strong>뜻:</strong> <span id="english_meaning"></span>
                 </div>
-                <nav class="headerNav">
-                    <ul class="headerNavList">
-                        <li><a id="headerLink1" href="#main-today-section">오늘의단어</a></li>
-                        <li><a id="headerLink2" href="#main-language-section">언어이해</a></li>
-                        <li><a id="headerLink3" href="#main-translation-section">언어번역</a></li>
-                        <li><a id="headerLink4" href="#main-feedback-section">피드백</a></li>
-                    </ul>
-                </nav>
+                <button onclick="showRandomEnglishWord()">랜덤</button>
+              </div>
+              <div id="word-container">
+                <div id="word-container">
+                  <strong>단어:</strong> <span id="japanese_word"></span><br />
+                  <strong>뜻:</strong> <span id="japanese_meaning"></span>
+                </div>
+                <button onclick="showRandomJapaneseWord()">랜덤</button>
+              </div>
+              <div id="word-container">
+                <div id="word-container">
+                  <strong>단어:</strong> <span id="french_word"></span><br />
+                  <strong>뜻:</strong> <span id="french_meaning"></span>
+                </div>
+                <button onclick="showRandomFrenchWord()">랜덤</button>
+              </div>
             </div>
-        </header>
-        <main class="main-contents">
-            <section id="main-visual-section" class="main-visual-section">
-                <video autoplay muted loop>
-                    <source src="video/business.mp4" type="video/mp4">
-                </video>
-                <div class="texts">
-                    <h2>3개의 언어</h2>
-                    <h4>영어, 일본어, 스페인어</h4>
-                    <h4>외국인과 대화할 수 있는 수준까지 최선을 다해보세요</h4>
-                </div>
-            </section>
-            <section id="main-today-section" class="main-today-section">
-                <div class="container">
-                    <h1 class="section-title">오늘의 단어</h1>
-                    <h3 class="section-subtitle">today</h3>
-                    <div id="word-container">
-                        <h1 id="word">Word of the Day</h1>
-                        <p id="meaning">Meaning: </p>
-                    </div>
-                    <script>
-                        $(document).ready(() => {
-                            // 서버에서 단어 가져오기
-                            $.get('/getWord', (data) => {
-                                // 가져온 단어와 뜻을 HTML에 적용
-                                $('#word').text(`Word of the Day: ${data.word}`);
-                                $('#meaning').text(`Meaning: ${data.meaning}`);
-                            });
-                        });
-                    </script>
-                </div>
-            </section>
-            <section id="main-language-section" class="main-language-section" style="background-color: yellow;">
-                <table id="resultTable">
-                    <!-- 테이블이 여기에 동적으로 생성될 것입니다. -->
-                </table>
-            </section>
-            <section id="main-translation-section" class="main-translation-section" style="background-color: red;">
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-            </section>
-            <section id="main-feedback-section" style="background-color: blue;">
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-                <h1>adfsf</h1>
-            </section>
-        </main>
+          </div>
+        </section>
+        <section
+          id="main-language-section"
+          class="main-language-section"
+          style="background-color: yellow"
+        >
+          <div class="container">
+            <h1 class="section-title">히라가나</h1>
+            <h3 class="section-subtitle">study</h3>
+            <table id="resultTableHiragana">
+              <!-- 동적으로 생성될 히라가나 테이블 -->
+            </table>
+          </div>
+        </section>
+        <section id="main-translation-section" class="main-translation-section" style="background-color: red">
+          <div class="container">
+            <h1 class="section-title">언어 번역</h1>
+            <h3 class="section-subtitle">translation</h3>
+            <div class="translation-box">
+              <h4>영어</h4>
+              <textarea id="inputEnglishText" placeholder="번역할 한글을 입력하세요"></textarea>
+              <button onclick="translateEnglishText()">번역하기</button>
+              <textarea id="outputEnglishText" placeholder="번역된 결과가 여기에 표시됩니다" readonly></textarea>
+              <button onclick="speakEnglishText()">듣기</button>
+            </div>
+            <div class="translation-box">
+              <h4>일본어</h4>
+              <textarea id="inputJapaneseText" placeholder="번역할 한글을 입력하세요"></textarea>
+              <button onclick="translateJapaneseText()">번역하기</button>
+              <textarea id="outputJapaneseText" placeholder="번역된 결과가 여기에 표시됩니다" readonly></textarea>
+              <button onclick="speakJapaneseText()">듣기</button>
+            </div>
+            <div class="translation-box">
+              <h4>프랑스어</h4>
+              <textarea id="inputFrenchText" placeholder="번역할 한글을 입력하세요"></textarea>
+              <button onclick="translateFrenchText()">번역하기</button>
+              <textarea id="outputFrenchText" placeholder="번역된 결과가 여기에 표시됩니다" readonly></textarea>
+              <button onclick="speakFrenchText()">듣기</button>
+            </div>
+          </div>
+        </section>
+        <section id="main-feedback-section" style="background-color: blue">
+          <div class="container">
+            <h1 class="section-title">메일 보내기</h1>
+            <h3 class="section-subtitle">contact</h3>
+            <div class="form-group">
+              <h5 for="name">Name</h5>
+              <input type="text" class="form-control" id="name" placeholder="이름 입력"/>
+            </div>
+            <div class="form-group">
+              <h5 for="email">Email</h5>
+              <input type="text" class="form-control" id="email" placeholder="이메일 입력"/>
+            </div>
+            <div class="form-group">
+              <h5 for="message">Message</h5>
+              <textarea id="message" rows="10" class="form-control"></textarea>
+            </div>
+            <button class="mail-btn" onclick="sendMail()">제출하기</button>
+          </div>
+        </section>
+      </main>
     </div>
-</body>
+  </body>
 </html>

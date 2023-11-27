@@ -61,4 +61,11 @@ h1, h2, h3, h4, h5 {
     padding-left: 1.2rem;
     padding-right: 1.2rem;
     margin: 0 auto;
+    margin-top: 100px;
+}
+
+@media screen and (max-width: 1000px) {
+    .container {
+        margin-top: 60px;
+    }
 }

@@ -83,32 +83,38 @@
     }
 }
 
-/* 오늘의 단어 영역 */
-.main-today-section {
-    padding: 60px 0;
+/* 랜덤 단어 영역 */
+.main-word-section {
+    padding: 30px 0;
 }
 
-.main-today-section .title {
+.main-word-section .title {
     text-align: center;
     font-size: 2rem;
 }
 
+.main-word-section .random-container {
+    display: flex;
+}
 
 @media screen and (max-width: 1000px) {
-    .main-today-section .title {
+    .main-word-section .title {
         text-align: center;
         font-size: 1.8rem;
     }
 }
 
-/* 언어 이해 */
+/* 언어 배우기 */
+.main-language-section {
+    padding: 30px 0;
+}
+
 table.inven {
     border: 1px solid black;
 } 
 
 table.inven caption {
-    font-weight: bold;
-    font-size: 1.4rem;
+    display: none;
 }
 
 table.inven tbody {
