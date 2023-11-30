@@ -75,87 +75,100 @@
             <h1 class="section-title">랜덤 단어</h1>
             <h3 class="section-subtitle">words</h3>
             <div class="random-container">
-              <div id="word-container">
-                <div id="word-container">
-                  <strong>단어:</strong> <span id="english_word"></span><br />
-                  <strong>뜻:</strong> <span id="english_meaning"></span>
+              <div class="word-card">
+                <h3>영어 단어</h3>
+                <div class="word-container">
+                  <div>
+                    <strong>단어:</strong> <span id="english_word"></span><br />
+                    <strong>뜻:</strong> <span id="english_meaning"></span>
+                  </div>
+                  <button onclick="showRandomEnglishWord()">랜덤돌리기</button>
                 </div>
-                <button onclick="showRandomEnglishWord()">랜덤</button>
               </div>
-              <div id="word-container">
-                <div id="word-container">
-                  <strong>단어:</strong> <span id="japanese_word"></span><br />
-                  <strong>뜻:</strong> <span id="japanese_meaning"></span>
+              <div class="word-card">
+                <h3>일본어 단어</h3>
+                <div class="word-container">
+                  <div>
+                    <strong>단어:</strong> <span id="japanese_word"></span><br />
+                    <strong>뜻:</strong> <span id="japanese_meaning"></span>
+                  </div>
+                  <button onclick="showRandomJapaneseWord()">랜덤돌리기</button>
                 </div>
-                <button onclick="showRandomJapaneseWord()">랜덤</button>
               </div>
-              <div id="word-container">
-                <div id="word-container">
-                  <strong>단어:</strong> <span id="french_word"></span><br />
-                  <strong>뜻:</strong> <span id="french_meaning"></span>
+              <div class="word-card">
+                <h3>프랑스어 단어</h3>
+                <div class="word-container">
+                  <div>
+                    <strong>단어:</strong> <span id="french_word"></span><br />
+                    <strong>뜻:</strong> <span id="french_meaning"></span>
+                  </div>
+                  <button onclick="showRandomFrenchWord()">랜덤돌리기</button>
                 </div>
-                <button onclick="showRandomFrenchWord()">랜덤</button>
               </div>
             </div>
           </div>
         </section>
-        <section
-          id="main-language-section"
-          class="main-language-section"
-          style="background-color: yellow"
-        >
+        <section id="main-language-section" class="main-language-section">
           <div class="container">
             <h1 class="section-title">히라가나</h1>
             <h3 class="section-subtitle">study</h3>
-            <table id="resultTableHiragana">
-              <!-- 동적으로 생성될 히라가나 테이블 -->
-            </table>
+            <div class="hiragana_container">
+              <table id="resultTableHiragana">
+                <!-- 동적으로 생성될 히라가나 테이블 -->
+              </table>
+            </div>
           </div>
         </section>
-        <section id="main-translation-section" class="main-translation-section" style="background-color: red">
+        <section id="main-translation-section" class="main-translation-section">
           <div class="container">
             <h1 class="section-title">언어 번역</h1>
             <h3 class="section-subtitle">translation</h3>
             <div class="translation-box">
-              <h4>영어</h4>
-              <textarea id="inputEnglishText" placeholder="번역할 한글을 입력하세요"></textarea>
-              <button onclick="translateEnglishText()">번역하기</button>
-              <textarea id="outputEnglishText" placeholder="번역된 결과가 여기에 표시됩니다" readonly></textarea>
-              <button onclick="speakEnglishText()">듣기</button>
-            </div>
-            <div class="translation-box">
-              <h4>일본어</h4>
-              <textarea id="inputJapaneseText" placeholder="번역할 한글을 입력하세요"></textarea>
-              <button onclick="translateJapaneseText()">번역하기</button>
-              <textarea id="outputJapaneseText" placeholder="번역된 결과가 여기에 표시됩니다" readonly></textarea>
-              <button onclick="speakJapaneseText()">듣기</button>
-            </div>
-            <div class="translation-box">
-              <h4>프랑스어</h4>
-              <textarea id="inputFrenchText" placeholder="번역할 한글을 입력하세요"></textarea>
-              <button onclick="translateFrenchText()">번역하기</button>
-              <textarea id="outputFrenchText" placeholder="번역된 결과가 여기에 표시됩니다" readonly></textarea>
-              <button onclick="speakFrenchText()">듣기</button>
+              <div class="translation-card">
+                <h4>영어</h4>
+                <textarea id="inputEnglishText" placeholder="번역할 한글을 입력하세요"></textarea>
+                <button onclick="translateEnglishText()">번역하기</button>
+                <textarea id="outputEnglishText" placeholder="번역된 결과가 여기에 표시됩니다" readonly></textarea>
+                <button onclick="speakEnglishText()">듣기</button>
+              </div>
+              <div class="translation-card">
+                <h4>일본어</h4>
+                <textarea id="inputJapaneseText" placeholder="번역할 한글을 입력하세요"></textarea>
+                <button onclick="translateJapaneseText()">번역하기</button>
+                <textarea id="outputJapaneseText" placeholder="번역된 결과가 여기에 표시됩니다" readonly></textarea>
+                <button onclick="speakJapaneseText()">듣기</button>
+              </div>
+              <div class="translation-card">
+                <h4>프랑스어</h4>
+                <textarea id="inputFrenchText" placeholder="번역할 한글을 입력하세요"></textarea>
+                <button onclick="translateFrenchText()">번역하기</button>
+                <textarea id="outputFrenchText" placeholder="번역된 결과가 여기에 표시됩니다" readonly></textarea>
+                <button onclick="speakFrenchText()">듣기</button>
+              </div>
             </div>
           </div>
         </section>
-        <section id="main-feedback-section" style="background-color: blue">
+        <section id="main-feedback-section" class="main-feedback-section">
           <div class="container">
             <h1 class="section-title">메일 보내기</h1>
             <h3 class="section-subtitle">contact</h3>
-            <div class="form-group">
-              <h5 for="name">Name</h5>
-              <input type="text" class="form-control" id="name" placeholder="이름 입력"/>
+            <div class="mail-container">
+              <div class="mail-box">
+                <div class="form-group">
+                  <h5 for="name">Name</h5>
+                  <input type="text" class="form-control" id="name" placeholder="이름 입력"/>
+                </div>
+                <div class="form-group">
+                  <h5 for="email">Email</h5>
+                  <input type="text" class="form-control" id="email" placeholder="이메일 입력"/>
+                </div>
+                <div class="form-group">
+                  <h5 for="message">Message</h5>
+                  <textarea id="message" rows="10" class="form-control"></textarea>
+                </div>
+                <button class="mail-btn" onclick="sendMail()">제출하기</button>
+              </div>
             </div>
-            <div class="form-group">
-              <h5 for="email">Email</h5>
-              <input type="text" class="form-control" id="email" placeholder="이메일 입력"/>
-            </div>
-            <div class="form-group">
-              <h5 for="message">Message</h5>
-              <textarea id="message" rows="10" class="form-control"></textarea>
-            </div>
-            <button class="mail-btn" onclick="sendMail()">제출하기</button>
           </div>
         </section>
       </main>

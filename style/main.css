@@ -93,8 +93,61 @@
     font-size: 2rem;
 }
 
-.main-word-section .random-container {
+.random-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.word-card {
+    flex: 0 0 48%;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.word-card h3 {
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.word-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.word-container strong, .word-container span {
+    font-size: 1.2rem;
+}
+
+.word-card button {
+    font-size: 1.2rem;
+    background-color: #F52997;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.word-card button:hover {
+    background-color: #B0005C;
+}
+
+@media screen and (max-width: 700px) {
+    .word-card {
+        flex: 0 0 100%;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -102,11 +155,33 @@
         text-align: center;
         font-size: 1.8rem;
     }
+
+    .word-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .word-card button {
+        font-size: 1.1rem;
+    }
+
+    .word-container strong, .word-container span {
+        font-size: 1.1rem;
+    }
 }
 
 /* 언어 배우기 */
 .main-language-section {
     padding: 30px 0;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url('../img/flower_background.jpg');
+    /* background-image: url('../img/flower_background.jpg'); */
+    background-size: cover;
+}
+
+.hiragana_container {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 table.inven {
@@ -126,10 +201,176 @@ table.inven td, table.inven th {
 }
 
 table.inven b, table.inven div {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 600;
 }
 
 table.inven p {
-    font-size: 1.0rem;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1000px) {
+    table.inven b, table.inven div {
+        font-size: 1.2rem;
+    }
+    
+    table.inven p {
+        font-size: 1.0rem;
+    }
+}
+
+/* 언어 번역 */
+.main-translation-section {
+    padding: 30px 0;
+}
+
+.translation-box {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.translation-card {
+    background-color: #263343;
+    border-radius: 30px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.translation-card h4 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.translation-card textarea {
+    width: calc(100% - 20px);
+    height: 120px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.translation-card button {
+    width: calc(100% - 20px);
+    background-color: #B0005C;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.translation-card button:hover {
+    background-color: #F52997;
+}
+
+@media screen and (max-width: 1000px) {
+    .translation-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .translation-card textarea {
+        font-size: 1.0rem;
+    }
+
+    .translation-card button {
+        font-size: 1.0rem;
+    }
+}
+
+/* 메일 보내기 (피드백)*/
+.main-feedback-section {
+    padding: 30px 0;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)), url('../img/snowman.jpg');
+    background-size: cover;
+}
+
+.mail-container {
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mail-box {
+    margin-top: 20px;
+    width: 90%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mail-box .form-group {
+    margin-bottom: 20px;
+}
+
+.mail-box h5 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.mail-box .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+}
+
+.mail-box textarea {
+    resize: vertical;
+    font-size: 1.1rem;
+}
+
+.mail-btn {
+    width: 100%;
+    background-color: #F52997;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.mail-btn:hover {
+    background-color:#B0005C;
+}
+
+@media screen and (max-width: 1000px) {
+    .mail-box h5 {
+        font-size: 1.1rem;
+    }
+
+    .mail-box .form-control {
+        font-size: 1.0rem;
+    }
+    
+    .mail-box textarea {
+        font-size: 1.0rem;
+    }
+
+    .mail-btn {
+        font-size: 1.0rem;
+    }
 }
