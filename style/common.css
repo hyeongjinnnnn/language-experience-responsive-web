@@ -19,6 +19,7 @@ a {
 }
 
 body {
+    margin: 0;
     background-color: #fff;
     height: 100%;
     text-size-adjust: 100%;
